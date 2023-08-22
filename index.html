@@ -16,15 +16,16 @@
     let computerchoice = Math.floor(Math.random() * 3);
 
     if (computerchoice === 0) {
-        return 'Rock';
+        return 'rock';
     } else if (computerchoice === 1) {
-        return 'Paper';
+        return 'paper';
     } else {
-        return 'Scissors';
+        return 'scissors';
     }
  }
 
  let playerSelection = prompt('Choose Rock, Paper or Scissors');
+ playerSelection = playerSelection.toLocaleLowerCase();
 
     console.log(getComputerChoice());
 </script>

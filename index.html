@@ -11,9 +11,19 @@
 
 <script> 
 
-function Round(playerSelection, computerSelection) {
+let playerSelection = prompt('Choose Rock, Paper or Scissors');
+    playerSelection = playerSelection.toLocaleLowerCase();
+
+    const computerSelection = getComputerChoice();
+
+let win;
+let lost;
+
+function oneRound(playerSelection, computerSelection) {
+
     if (playerSelection === 'rock') {
         if (computerSelection === 'scissors') {
+           
     return 'You win, Rock beats Scissors';
 } else if (computerSelection === 'paper') {
     return 'you lose, Paper beats rock';
@@ -24,6 +34,7 @@ function Round(playerSelection, computerSelection) {
 
     if (playerSelection === 'paper') {
         if (computerSelection === 'rock') {
+    win = true;
     return 'You win, Paper beats Rock';
 } else if (computerSelection === 'scissors') {
     return 'you lose, Scissors beats Paper';
@@ -34,6 +45,7 @@ function Round(playerSelection, computerSelection) {
 
 if (playerSelection === 'Scissors') {
         if (computerSelection === 'paper') {
+    win = true;
     return 'You win, Scissors beats Paper';
 } else if (computerSelection === 'rock') {
     return 'you lose, Rock beats Scissors';
@@ -56,12 +68,9 @@ if (playerSelection === 'Scissors') {
     }
  }
 
- let playerSelection = prompt('Choose Rock, Paper or Scissors');
-    playerSelection = playerSelection.toLocaleLowerCase();
 
-    const computerSelection = getComputerChoice();
+ 
 
-    console.log(Round(playerSelection, computerSelection))
-    
+    console.log(oneRound(playerSelection, computerSelection));
 </script>
 </html>

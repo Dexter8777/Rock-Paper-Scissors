@@ -11,8 +11,9 @@
 
 <script> 
 
-let playerSelection = prompt('Choose Rock, Paper or Scissors');
-    playerSelection = playerSelection.toLocaleLowerCase();
+ 
+    playerSelection = prompt('Choose Rock, Paper or Scissors.');
+    playerSelection = playerSelection.toLowerCase();
 
     const computerSelection = getComputerChoice();
 
@@ -82,8 +83,26 @@ function getScore() {
     }
 }
 
- 
+function playGame(playerSelection, computerSelection) {
     console.log(oneRound(playerSelection, computerSelection));
     console.log(getScore());
+
+    console.log(oneRound(playerSelection, computerSelection));
+    console.log(getScore());
+
+    console.log(oneRound(playerSelection, computerSelection));
+    console.log(getScore());
+
+    console.log(oneRound(playerSelection, computerSelection));
+    console.log(getScore());
+
+    console.log(oneRound(playerSelection, computerSelection));
+    console.log(getScore());
+
+}
+
+
+
+   
 </script>
 </html>

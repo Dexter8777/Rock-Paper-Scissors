@@ -12,18 +12,20 @@
 <script> 
 
  
-    let playerSelection = prompt('Choose Rock, Paper or Scissors.');
-    playerSelection = playerSelection.toLowerCase();
+    let playerSelection = getPlayerInput()
 
     const computerSelection = getComputerChoice();
 
-let win;
-let lose;
+    let win;
+    let lose;
 
-let playerScore = 0;
-let computerScore = 0;
+    let playerScore = 0;
+    let computerScore = 0;
+
+
 
 function oneRound(playerSelection, computerSelection) {
+ 
 
     if (playerSelection === 'rock') {
         if (computerSelection === 'scissors') {
@@ -63,6 +65,12 @@ if (playerSelection === 'Scissors') {
 }
 }
 
+function getPlayerInput() {
+        let playerChoice = prompt('Choose Rock, Paper or Scissors.');
+        playerChoice = playerChoice.toLowerCase();
+        return playerChoice;
+    }
+
  function getComputerChoice() {
     let computerchoice = Math.floor(Math.random() * 3);
 
@@ -87,18 +95,25 @@ function getScore(playerScore, computerScore) {
 }
 
 function playGame() {
+
+    getPlayerInput()
+    console.log(oneRound(playerSelection, computerSelection));
+    console.log(getScore(playerScore, computerScore));
+    
+    getPlayerInput()
     console.log(oneRound(playerSelection, computerSelection));
     console.log(getScore(playerScore, computerScore));
 
+    getPlayerInput()
     console.log(oneRound(playerSelection, computerSelection));
     console.log(getScore(playerScore, computerScore));
 
+    getPlayerInput()
     console.log(oneRound(playerSelection, computerSelection));
     console.log(getScore(playerScore, computerScore));
 
-    console.log(oneRound(playerSelection, computerSelection));
-    console.log(getScore(playerScore, computerScore));
 
+    getPlayerInput()
     console.log(oneRound(playerSelection, computerSelection));   
     console.log(getScore(playerScore, computerScore));
 }

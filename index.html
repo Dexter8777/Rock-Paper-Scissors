@@ -12,13 +12,16 @@
 <script> 
 
  
-    playerSelection = prompt('Choose Rock, Paper or Scissors.');
+    let playerSelection = prompt('Choose Rock, Paper or Scissors.');
     playerSelection = playerSelection.toLowerCase();
 
     const computerSelection = getComputerChoice();
 
 let win;
 let lose;
+
+let playerScore = 0;
+let computerScore = 0;
 
 function oneRound(playerSelection, computerSelection) {
 
@@ -72,36 +75,35 @@ if (playerSelection === 'Scissors') {
     }
  }
 
-function getScore() {
+function getScore(playerScore, computerScore) {
 
     if(win == true) {
-        let playerScore =+ 1;
+     ++playerScore;
         return "You score is " + playerScore;
     } else if (lose == true) {
-        let computerScore =+ 1;
+         ++computerScore;
         return "The computer's score is " + computerScore;
     }
 }
 
-function playGame(playerSelection, computerSelection) {
+function playGame() {
     console.log(oneRound(playerSelection, computerSelection));
-    console.log(getScore());
+    console.log(getScore(playerScore, computerScore));
 
     console.log(oneRound(playerSelection, computerSelection));
-    console.log(getScore());
+    console.log(getScore(playerScore, computerScore));
 
     console.log(oneRound(playerSelection, computerSelection));
-    console.log(getScore());
+    console.log(getScore(playerScore, computerScore));
 
     console.log(oneRound(playerSelection, computerSelection));
-    console.log(getScore());
+    console.log(getScore(playerScore, computerScore));
 
-    console.log(oneRound(playerSelection, computerSelection));
-    console.log(getScore());
-
+    console.log(oneRound(playerSelection, computerSelection));   
+    console.log(getScore(playerScore, computerScore));
 }
 
-
+console.log(playGame());
 
    
 </script>

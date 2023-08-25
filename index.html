@@ -12,6 +12,7 @@
 <script> 
 
  
+    let playerSelection;
 
     const computerSelection = getComputerChoice();
 
@@ -90,29 +91,15 @@ function getScore(playerScore, computerScore) {
 
 function playGame() {
 
-    
-    console.log(oneRound(playerSelection, computerSelection));
-    console.log(getScore(playerScore, computerScore));
-    
+    playerSelection = prompt('Choose Rock, Paper or Scissors!');
+    playerSelection = playerSelection.toLowerCase();
 
     console.log(oneRound(playerSelection, computerSelection));
-    console.log(getScore(playerScore, computerScore));
-
-    
-    console.log(oneRound(playerSelection, computerSelection));
-    console.log(getScore(playerScore, computerScore));
-
-   
-    console.log(oneRound(playerSelection, computerSelection));
-    console.log(getScore(playerScore, computerScore));
-
-
-  
-    console.log(oneRound(playerSelection, computerSelection));   
     console.log(getScore(playerScore, computerScore));
 }
 
 console.log(playGame());
+
 
    
 </script>

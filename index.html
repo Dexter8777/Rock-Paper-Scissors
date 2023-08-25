@@ -12,7 +12,6 @@
 <script> 
 
  
-    let playerSelection = getPlayerInput()
 
     const computerSelection = getComputerChoice();
 
@@ -23,53 +22,48 @@
     let computerScore = 0;
 
 
+    function oneRound(playerSelection, computerSelection) {
+        
+        if (playerSelection === 'rock') {
+            if (computerSelection === 'scissors') {
+                win = true;
+                return 'You win, Rock beats Scissors';
+            } else if (computerSelection === 'paper') {
+                lose = true;
+                return 'you lose, Paper beats rock';
+            } else {
+                return 'Draw';
+            }
+        }
 
-function oneRound(playerSelection, computerSelection) {
- 
+        if (playerSelection === 'paper') {
+            if (computerSelection === 'rock') {
+                win = true;
+                return 'You win, Paper beats Rock';
+            } else if (computerSelection === 'scissors') {
+                lose = true;
+                return 'you lose, Scissors beats Paper';
+            } else {
+                return 'Draw';
+            }
+        }
 
-    if (playerSelection === 'rock') {
-        if (computerSelection === 'scissors') {
-           win = true;
-    return 'You win, Rock beats Scissors';
-} else if (computerSelection === 'paper') {
-    lose = true;
-    return 'you lose, Paper beats rock';
-} else {
-    return 'Draw';
+        if (playerSelection === 'Scissors') {
+            if (computerSelection === 'paper') {
+                win = true;
+                return 'You win, Scissors beats Paper';
+        } else if (computerSelection === 'rock') {
+                lose = true;
+                return 'you lose, Rock beats Scissors';
+        } else {
+                return 'Draw';
+        }
+
+        }   
     }
-}
+                
 
-    if (playerSelection === 'paper') {
-        if (computerSelection === 'rock') {
-    win = true;
-    return 'You win, Paper beats Rock';
-} else if (computerSelection === 'scissors') {
-    lose = true;
-    return 'you lose, Scissors beats Paper';
-} else {
-    return 'Draw';
-    }
-}
 
-if (playerSelection === 'Scissors') {
-        if (computerSelection === 'paper') {
-    win = true;
-    return 'You win, Scissors beats Paper';
-} else if (computerSelection === 'rock') {
-    lose = true;
-    return 'you lose, Rock beats Scissors';
-} else {
-    return 'Draw';
-    }
-
-}
-}
-
-function getPlayerInput() {
-        let playerChoice = prompt('Choose Rock, Paper or Scissors.');
-        playerChoice = playerChoice.toLowerCase();
-        return playerChoice;
-    }
 
  function getComputerChoice() {
     let computerchoice = Math.floor(Math.random() * 3);
@@ -96,24 +90,24 @@ function getScore(playerScore, computerScore) {
 
 function playGame() {
 
-    getPlayerInput()
+    
     console.log(oneRound(playerSelection, computerSelection));
     console.log(getScore(playerScore, computerScore));
     
-    getPlayerInput()
+
     console.log(oneRound(playerSelection, computerSelection));
     console.log(getScore(playerScore, computerScore));
 
-    getPlayerInput()
+    
     console.log(oneRound(playerSelection, computerSelection));
     console.log(getScore(playerScore, computerScore));
 
-    getPlayerInput()
+   
     console.log(oneRound(playerSelection, computerSelection));
     console.log(getScore(playerScore, computerScore));
 
 
-    getPlayerInput()
+  
     console.log(oneRound(playerSelection, computerSelection));   
     console.log(getScore(playerScore, computerScore));
 }

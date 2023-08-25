@@ -14,7 +14,7 @@
  
     let playerSelection;
 
-    let computerSelection = getComputerChoice();
+    let computerSelection;
 
     let win;
 
@@ -92,6 +92,7 @@ function getScore(playerScore, computerScore) {
 function playGame() {
 
     playerSelection = prompt('Choose rock, paper or scissors!');
+    computerSelection = getComputerChoice();
     console.log(oneRound(playerSelection, computerSelection));
     console.log(getScore(playerScore, computerScore));
 }

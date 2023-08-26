@@ -20,9 +20,13 @@
     let computerScore = 0;
 
     let win;
+    let lose;
 
     function oneRound(playerSelection, computerSelection) {
         
+        win = false;
+        lose = false;
+
         if (playerSelection === 'rock') {
             if (computerSelection === 'rock') {
                 return 'Draw!';
@@ -30,7 +34,7 @@
                 win = true;
                 return 'You win! Rock beats Scissors';
             } else if (computerSelection === 'paper') {
-                win = false
+                lose = true;
                 return 'you lose! Paper beats rock';
             } 
         }
@@ -42,7 +46,7 @@
                 win = true;
                 return 'You win! Paper beats Rock';
             } else if (computerSelection === 'scissors') {
-                win = false;
+                lose = true;
                 return 'you lose! Scissors beats Paper';
             } 
         }
@@ -54,7 +58,7 @@
                 win = true;
                 return 'You win! Scissors beats Paper';
             } else if (computerSelection === 'rock') {
-                win = false;
+                lose = true;
                 return 'you lose! Rock beats Scissors';
             } 
         }   
@@ -76,7 +80,7 @@
     if(win == true) {
         ++playerScore
         return "Your score is " + playerScore;
-    } else if (win == false) {
+    } else if (lose == true) {
         ++computerScore;
         return "The computer's score is " + computerScore;
     } else {

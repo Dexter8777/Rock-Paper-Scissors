@@ -16,43 +16,46 @@
 
     let computerSelection;
 
+    let playerScore = 0;
+    let computerScore = 0;
+
     let win;
 
     function oneRound(playerSelection, computerSelection) {
         
         if (playerSelection === 'rock') {
             if (computerSelection === 'rock') {
-                return 'Draw';
+                return 'Draw!';
             } else if (computerSelection === 'scissors') {
                 win = true;
-                return 'You win, Rock beats Scissors';
+                return 'You win! Rock beats Scissors';
             } else if (computerSelection === 'paper') {
                 win = false
-                return 'you lose, Paper beats rock';
+                return 'you lose! Paper beats rock';
             } 
         }
 
         if (playerSelection === 'paper') {
             if (computerSelection === 'paper') {
-                return 'Draw';
+                return 'Draw!';
             } else if (computerSelection === 'rock') {
                 win = true;
-                return 'You win, Paper beats Rock';
+                return 'You win! Paper beats Rock';
             } else if (computerSelection === 'scissors') {
                 win = false;
-                return 'you lose, Scissors beats Paper';
+                return 'you lose! Scissors beats Paper';
             } 
         }
 
         if (playerSelection === 'scissors') {
             if (computerSelection === 'scissors') {
-                return 'Draw';
+                return 'Draw!';
             } else if (computerSelection === 'paper') {
                 win = true;
-                return 'You win, Scissors beats Paper';
+                return 'You win! Scissors beats Paper';
             } else if (computerSelection === 'rock') {
                 win = false;
-                return 'you lose, Rock beats Scissors';
+                return 'you lose! Rock beats Scissors';
             } 
         }   
     }
@@ -69,26 +72,30 @@
     }
  }
 
+ function getScore() {
+    if(win == true) {
+        ++playerScore
+        return "Your score is " + playerScore;
+    } else if (win == false) {
+        ++computerScore;
+        return "The computer's score is " + computerScore;
+    } else {
+        return 'It is a draw';
+    }
+ }
+
 
 function playGame() {
 
     playerSelection = prompt('Choose rock, paper or scissors!');
     playerSelection = playerSelection.toLocaleLowerCase();
+
     computerSelection = getComputerChoice();
+
     console.log(oneRound(playerSelection, computerSelection));
     
-    playerScore = 0;
-    computerScore = 0;
-
-    if(win == true) {
-     ++playerScore;
-        return "Your score is " + playerScore;
-    } else if (win == false) {
-         ++computerScore
-        return "The computer's score is " + computerScore;
-    } else {
-        return 'It is a draw';
-    }
+    console.log(getScore());
+    
 }
 
 console.log(playGame());

@@ -64,51 +64,57 @@
         }   
     }
 
- function getComputerChoice() {
-    let computerchoice = Math.floor(Math.random() * 3);
+    function getComputerChoice() {
+        let computerchoice = Math.floor(Math.random() * 3);
 
-    if (computerchoice === 0) {
-        return 'rock';
-    } else if (computerchoice === 1) {
-        return 'paper';
-    } else {
-        return 'scissors';
+        if (computerchoice === 0) {
+            return 'rock';
+        } else if (computerchoice === 1) {
+            return 'paper';
+        } else {
+            return 'scissors';
+        }
     }
- }
 
- function getScore() {
-    if(win == true) {
-        ++playerScore
-        return "Your score is " + playerScore;
-    } else if (lose == true) {
-        ++computerScore;
-        return "The computer's score is " + computerScore;
-    } else {
-        return 'It is a draw';
-    }
- }
-
-
-function playGame() {
-
-    playerSelection = prompt('Choose rock, paper or scissors!');
-    playerSelection = playerSelection.toLocaleLowerCase();
-
-    computerSelection = getComputerChoice();
-
-    console.log(oneRound(playerSelection, computerSelection));
-    
-    console.log(getScore());
-    
+    function finalScore() {
+        if (playerScore > computerScore) {
+                return `WINNER!! Your total score is ${playerScore} : The computers total score is ${computerScore}` 
+            } else if (playerScore === computerScore) {
+                return `You drew with the computer, ${playerScore} : ${computerScore}`
+            } else {
+                return `LOSER!! The computers total score is ${computerScore} : Your total score is ${playerScore}`
+            }
 }
 
+    function playGame() {
+
+        playerSelection = prompt('Choose rock, paper or scissors!');
+        playerSelection = playerSelection.toLocaleLowerCase();
+
+        computerSelection = getComputerChoice();
+
+        console.log(oneRound(playerSelection, computerSelection));
+
+        if(win == true) {
+            ++playerScore
+            return "Your score is " + playerScore;
+        } else if (lose == true) {
+            ++computerScore;
+            return "The computer's score is " + computerScore;
+        } else {
+            return 'It is a draw';
+        }
+        
+    }
+
 console.log(playGame());
 console.log(playGame());
 console.log(playGame());
 console.log(playGame());
 console.log(playGame());
 
+console.log(finalScore());
 
-   
+
 </script>
 </html>

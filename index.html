@@ -18,10 +18,6 @@
 
     let win;
 
-    let playerScore = 0;
-    let computerScore = 0;
-
-
     function oneRound(playerSelection, computerSelection) {
         
         if (playerSelection === 'rock') {
@@ -76,13 +72,16 @@
     }
  }
 
-function getScore(playerScore, computerScore) {
+function getScore() {
+
+    playerScore = 0;
+    computerScore = 0;
 
     if(win == true) {
      ++playerScore;
-        return "You score is " + playerScore;
+        return "Your score is " + playerScore;
     } else if (win == false) {
-         ++computerScore;
+         ++computerScore
         return "The computer's score is " + computerScore;
     } else {
         return 'It is a draw';
@@ -92,9 +91,10 @@ function getScore(playerScore, computerScore) {
 function playGame() {
 
     playerSelection = prompt('Choose rock, paper or scissors!');
+    playerSelection = playerSelection.toLocaleLowerCase();
     computerSelection = getComputerChoice();
     console.log(oneRound(playerSelection, computerSelection));
-    console.log(getScore(playerScore, computerScore));
+    console.log(getScore());
 }
 
 console.log(playGame());

@@ -56,9 +56,6 @@
             } 
         }   
     }
-                
-
-
 
  function getComputerChoice() {
     let computerchoice = Math.floor(Math.random() * 3);
@@ -72,8 +69,14 @@
     }
  }
 
-function getScore() {
 
+function playGame() {
+
+    playerSelection = prompt('Choose rock, paper or scissors!');
+    playerSelection = playerSelection.toLocaleLowerCase();
+    computerSelection = getComputerChoice();
+    console.log(oneRound(playerSelection, computerSelection));
+    
     playerScore = 0;
     computerScore = 0;
 
@@ -86,15 +89,6 @@ function getScore() {
     } else {
         return 'It is a draw';
     }
-}
-
-function playGame() {
-
-    playerSelection = prompt('Choose rock, paper or scissors!');
-    playerSelection = playerSelection.toLocaleLowerCase();
-    computerSelection = getComputerChoice();
-    console.log(oneRound(playerSelection, computerSelection));
-    console.log(getScore());
 }
 
 console.log(playGame());

@@ -7,6 +7,10 @@
 </head>
 <body>
     <h1>Rock Paper Scissors</h1>
+    <h2>Select An Option To Play One Round</h2>
+    <button id="rock">Rock</button>
+    <button id="paper">paper</button>
+    <button id="scissors">Scissors</button>
 </body>
 
 <script> 
@@ -88,7 +92,6 @@
 
     function playGame() {
 
-        playerSelection = prompt('Choose rock, paper or scissors!');
         playerSelection = playerSelection.toLocaleLowerCase();
 
         computerSelection = getComputerChoice();

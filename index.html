@@ -9,14 +9,16 @@
     <h1>Rock Paper Scissors</h1>
     <h2>Select An Option To Play One Round</h2>
     <button id='Rock'>Rock</button>
-    <button>Paper</button>
-    <button>Scissors</button>
+    <button id ='Paper'>Paper</button>
+    <button id="Scissors">Scissors</button>
 </body>
 
 <script> 
 
  
     let rock = document.querySelector('#Rock');
+    let paper = document.querySelector('#Paper');
+    let scissors = document.querySelector('#Scissors');
 
     let playerSelection;
     let computerSelection;
@@ -29,6 +31,16 @@
 
     rock.addEventListener('click', () => {
         playerSelection = 'rock';
+        playGame();
+    });
+
+    paper.addEventListener('click', () => {
+        playerSelection = 'paper';
+        playGame();
+    });
+
+    scissors.addEventListener('click', () => {
+        playerSelection = 'scissors';
         playGame();
     });
 

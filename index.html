@@ -17,7 +17,7 @@
 <script> 
 
  const container = document.querySelector('#container');
- 
+
     let rock = document.querySelector('#Rock');
     let paper = document.querySelector('#Paper');
     let scissors = document.querySelector('#Scissors');
@@ -48,43 +48,43 @@
 
     function oneRound(playerSelection, computerSelection) {
         
-        
+        const resultPara = document.CreateElement('p');
         win = false;
         lose = false;
 
         if (playerSelection === 'rock') {
             if (computerSelection === 'rock') {
-                return 'Draw!';
+                resultPara.textContent = 'Draw!';
             } else if (computerSelection === 'scissors') {
                 win = true;
-                return 'You win! Rock beats Scissors';
+                resultPara.textContent = 'You win! Rock beats Scissors';
             } else if (computerSelection === 'paper') {
                 lose = true;
-                return 'you lose! Paper beats rock';
+                resultPara.textContent = 'you lose! Paper beats rock';
             } 
         }
 
         if (playerSelection === 'paper') {
             if (computerSelection === 'paper') {
-                return 'Draw!';
+                resultPara.textContent = 'Draw!';
             } else if (computerSelection === 'rock') {
                 win = true;
-                return 'You win! Paper beats Rock';
+                resultPara.textContent = 'You win! Paper beats Rock';
             } else if (computerSelection === 'scissors') {
                 lose = true;
-                return 'you lose! Scissors beats Paper';
+                resultPara.textContent = 'you lose! Scissors beats Paper';
             } 
         }
 
         if (playerSelection === 'scissors') {
             if (computerSelection === 'scissors') {
-                return 'Draw!';
+                resultPara.textContent = 'Draw!';
             } else if (computerSelection === 'paper') {
                 win = true;
-                return 'You win! Scissors beats Paper';
+                resultPara.textContent = 'You win! Scissors beats Paper';
             } else if (computerSelection === 'rock') {
                 lose = true;
-                return 'you lose! Rock beats Scissors';
+                resultPara.textContent = 'you lose! Rock beats Scissors';
             } 
         }   
     }

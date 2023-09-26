@@ -8,16 +8,17 @@
 <body>
     <h1>Rock Paper Scissors</h1>
     <h2>Select An Option To Play One Round</h2>
-    <button id="rock">Rock</button>
-    <button id="paper">paper</button>
-    <button id="scissors">Scissors</button>
+    <button id='Rock'>Rock</button>
+    <button>Paper</button>
+    <button>Scissors</button>
 </body>
 
 <script> 
 
  
-    let playerSelection;
+    let rock = document.querySelector('#Rock');
 
+    let playerSelection;
     let computerSelection;
 
     let playerScore = 0;
@@ -25,6 +26,11 @@
 
     let win;
     let lose;
+
+    rock.addEventListener('click', () => {
+        playerSelection = 'rock';
+        playGame();
+    });
 
     function oneRound(playerSelection, computerSelection) {
         
@@ -110,13 +116,9 @@
         
     }
 
-console.log(playGame());
-console.log(playGame());
-console.log(playGame());
-console.log(playGame());
-console.log(playGame());
+    
 
-console.log(finalScore());
+
 
 
 </script>

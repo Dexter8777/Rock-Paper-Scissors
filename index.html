@@ -11,7 +11,7 @@
     <button id='Rock'>Rock</button>
     <button id ='Paper'>Paper</button>
     <button id="Scissors">Scissors</button>
-    <div id ='container'></div>
+    <div id='container'></div>
 </body>
 
 <script> 
@@ -48,7 +48,7 @@
 
     function oneRound(playerSelection, computerSelection) {
         
-        const resultPara = document.CreateElement('p');
+        const resultPara = document.createElement('p');
         win = false;
         lose = false;
 
@@ -87,6 +87,8 @@
                 resultPara.textContent = 'you lose! Rock beats Scissors';
             } 
         }   
+
+        container.appendChild(resultPara);
     }
 
     function getComputerChoice() {

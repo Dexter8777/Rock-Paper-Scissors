@@ -114,7 +114,19 @@
             }
 }
 
-
+function displayRunningScore() {
+    const scorePara = document.createElement('p');
+    if(win == true) {
+            ++playerScore
+            scorePara = "Your score is " + playerScore;
+        } else if (lose == true) {
+            ++computerScore;
+            scorePara = "The computer's score is " + computerScore;
+        } else {
+            scorePara = 'It is a draw';
+        }
+        container.appendChild(scorePara);
+}
 
     function playGame() {
 
@@ -124,15 +136,7 @@
 
         (oneRound(playerSelection, computerSelection));
 
-        if(win == true) {
-            ++playerScore
-            return "Your score is " + playerScore;
-        } else if (lose == true) {
-            ++computerScore;
-            return "The computer's score is " + computerScore;
-        } else {
-            return 'It is a draw';
-        }
+       
         
     }
 

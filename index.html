@@ -89,6 +89,7 @@
         }   
 
         container.appendChild(resultPara);
+        
     }
 
     function getComputerChoice() {
@@ -103,7 +104,7 @@
         }
     }
 
-    function finalScore() {
+    function calculateFinalScore() {
         if (playerScore > computerScore) {
                 return `WINNER!! Your total score is ${playerScore} : The computers total score is ${computerScore}` 
             } else if (playerScore === computerScore) {
@@ -113,13 +114,15 @@
             }
 }
 
+
+
     function playGame() {
 
         playerSelection = playerSelection.toLocaleLowerCase();
 
         computerSelection = getComputerChoice();
 
-        console.log(oneRound(playerSelection, computerSelection));
+        (oneRound(playerSelection, computerSelection));
 
         if(win == true) {
             ++playerScore

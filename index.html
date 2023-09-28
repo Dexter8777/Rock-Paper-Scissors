@@ -118,14 +118,14 @@ function displayRunningScore() {
     const scorePara = document.createElement('p');
     if(win == true) {
             ++playerScore
-            scorePara = "Your score is " + playerScore;
+            scorePara.textContent = "Your score is " + playerScore;
         } else if (lose == true) {
             ++computerScore;
-            scorePara = "The computer's score is " + computerScore;
+            scorePara.textContent = "The computer's score is " + computerScore;
         } else {
-            scorePara = 'It is a draw';
+            scorePara.textContent = 'It is a draw';
         }
-        container.appendChild(scorePara);
+    container.appendChild(scorePara);
 }
 
     function playGame() {
@@ -134,8 +134,8 @@ function displayRunningScore() {
 
         computerSelection = getComputerChoice();
 
-        (oneRound(playerSelection, computerSelection));
-
+        oneRound(playerSelection, computerSelection);
+        displayRunningScore();
        
         
     }

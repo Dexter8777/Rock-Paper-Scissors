@@ -28,6 +28,7 @@
     let playerScore = 0;
     let computerScore = 0;
 
+    let gamesPlayed;
     let win;
     let lose;
 
@@ -105,12 +106,13 @@
     }
 
     function calculateFinalScore() {
+        const finalScore = document.createElement('p')
         if (playerScore > computerScore) {
-                return `WINNER!! Your total score is ${playerScore} : The computers total score is ${computerScore}` 
+                finalScore.textContent = `WINNER!! Your total score is ${playerScore} : The computers total score is ${computerScore}` 
             } else if (playerScore === computerScore) {
-                return `You drew with the computer, ${playerScore} : ${computerScore}`
+                finalScore.textContent = `You drew with the computer, ${playerScore} : ${computerScore}`
             } else {
-                return `LOSER!! The computers total score is ${computerScore} : Your total score is ${playerScore}`
+                finalScore.textContent = `LOSER!! The computers total score is ${computerScore} : Your total score is ${playerScore}`
             }
 }
 
@@ -136,7 +138,7 @@ function displayRunningScore() {
 
         oneRound(playerSelection, computerSelection);
         displayRunningScore();
-       
+        ++gamesPlayed;
         
     }
 

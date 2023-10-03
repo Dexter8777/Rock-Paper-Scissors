@@ -139,10 +139,13 @@ function displayRunningScore() {
         oneRound(playerSelection, computerSelection);
         displayRunningScore();
         ++gamesPlayed;
+
+        if (gamesPlayed == 5){
+            calculateFinalScore();
+        }
         
     }
 
-    
 
     
 

@@ -141,13 +141,17 @@ function displayRunningScore() {
         displayRunningScore();
         ++gamesPlayed;
 
+        displayFinalResults();
+        
+    }
+
+    function displayFinalResults() {
         if (gamesPlayed == 5){
             calculateFinalScore();
             resetBtn = document.createElement('button')
             resetBtn.textContent = 'Reset Game'
             container.appendChild(resetBtn);
         } 
-        
     }
 
     function resetGame() {

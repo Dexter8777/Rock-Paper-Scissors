@@ -143,17 +143,18 @@ function displayRunningScore() {
 
         if (gamesPlayed == 5){
             calculateFinalScore();
-        }
+            resetBtn = document.createElement('button')
+            resetBtn.textContent = 'Reset Game'
+            container.appendChild(resetBtn);
+        } 
         
     }
 
     function resetGame() {
-        if (games > 5) {
             window.addEventListener('click', () => {
                 container.replaceChildren();
             })
         }
-    }
 
 
     

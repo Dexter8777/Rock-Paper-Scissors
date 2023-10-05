@@ -147,6 +147,14 @@ function displayRunningScore() {
         
     }
 
+    function resetGame() {
+        if (games > 5) {
+            window.addEventListener('click', () => {
+                container.replaceChildren();
+            })
+        }
+    }
+
 
     
 

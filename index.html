@@ -36,17 +36,20 @@
 
     rock.addEventListener('click', () => {
         playerSelection = 'rock';
-        playGame();
-    });
+            playGame();
+            resetGame();
+        });
 
     paper.addEventListener('click', () => {
         playerSelection = 'paper';
         playGame();
+        resetGame();
     });
 
     scissors.addEventListener('click', () => {
         playerSelection = 'scissors';
         playGame();
+        resetGame();
     });
 
     function oneRound(playerSelection, computerSelection) {
@@ -149,9 +152,11 @@ function displayRunningScore() {
 
 
     function resetGame() {
-            
-            
+        if (gamesPlayed == 5) {
+            container.replaceChildren();
+            calculateFinalScore();
         }
+    }
 
 
     

@@ -148,7 +148,9 @@ function displayRunningScore() {
     }
 
     function resetGame() {
-        if (gamesPlayed == 5) {
+        if (!(gamesPlayed == 1 || gamesPlayed == 5)) {
+            return;
+        } else if (gamesPlayed == 5) {
             container.replaceChildren();
             calculateFinalScore();
             gamesPlayed = 0;

@@ -151,6 +151,9 @@ function displayRunningScore() {
         if (gamesPlayed == 5) {
             container.replaceChildren();
             calculateFinalScore();
+            gamesPlayed = 0;
+            playerScore = 0;
+            computerScore = 0;
         }
     }
 

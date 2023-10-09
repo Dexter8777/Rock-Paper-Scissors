@@ -24,9 +24,6 @@
     let paper = document.querySelector('#Paper');
     let scissors = document.querySelector('#Scissors');
 
-    let playerSelection;
-    let computerSelection;
-
     let playerScore = 0;
     let computerScore = 0;
 
@@ -35,19 +32,17 @@
     let lose;
 
     rock.addEventListener('click', () => {
-        playerSelection = 'rock';
             playGame();
             resetGame();
         });
 
     paper.addEventListener('click', () => {
-        playerSelection = 'paper';
         playGame();
         resetGame();
     });
 
     scissors.addEventListener('click', () => {
-        playerSelection = 'scissors';
+
         playGame();
         resetGame();
     });
@@ -138,6 +133,7 @@ function displayRunningScore() {
 
     function playGame() {             
         
+        playerSelection = setPlayerSelection();
         playerSelection = playerSelection.toLocaleLowerCase();
 
         computerSelection = getComputerChoice();

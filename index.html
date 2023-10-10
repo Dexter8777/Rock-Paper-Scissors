@@ -31,21 +31,11 @@
     let win;
     let lose;
 
-    rock.addEventListener('click', () => {
-            playGame();
-            resetGame();
-        });
+    rock.addEventListener('click', playGame);
 
-    paper.addEventListener('click', () => {
-        playGame();
-        resetGame();
-    });
+    paper.addEventListener('click', playGame);
 
-    scissors.addEventListener('click', () => {
-
-        playGame();
-        resetGame();
-    });
+    scissors.addEventListener('click', playGame);
 
     function oneRound(playerSelection, computerSelection) {
         
@@ -133,7 +123,7 @@ function displayRunningScore() {
 
     function playGame() {             
         
-        playerSelection = setPlayerSelection();
+        playerSelection = getPlayerSelection();
         playerSelection = playerSelection.toLocaleLowerCase();
 
         computerSelection = getComputerChoice();
@@ -141,6 +131,8 @@ function displayRunningScore() {
         oneRound(playerSelection, computerSelection);
         displayRunningScore();
         ++gamesPlayed;
+
+        resetGame();
     }
 
     function resetGame() {

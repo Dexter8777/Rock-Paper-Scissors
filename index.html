@@ -43,6 +43,12 @@
     scissors.addEventListener('click', playGame);
 
     function oneRound(playerSelection, computerSelection) {
+
+        /*RULES OF ROCK, PAPER, SCISSORS:
+           Rock beats scissors and loses to paper
+           paper beats rock but loses to scissors
+           scissors beats paper but loses to rock  
+        */
         
         const resultPara = document.createElement('p');
         win = false;
@@ -88,7 +94,20 @@
         
     }
 
+    function getPlayerSelection() {
+        if(rock.clicked) {
+            return 'rock'
+        } else if (scissors.clicked) {
+            return 'scissors'
+        } else {
+            return 'paper'
+        }
+    }
+
     function getComputerChoice() {
+
+    /* This function randomizes and returns the computers selection*/
+
         let computerChoice = Math.floor(Math.random() * 3);
 
         if (computerChoice === 0) {
@@ -141,6 +160,9 @@ function displayRunningScore() {
     }
 
     function resetGame() {
+
+        /*This function will restart the values of all counters and clear the container div once five games have been played*/
+
         if (!(gamesPlayed == 1 || gamesPlayed == 5)) {
             return;
         } else if (gamesPlayed == 5) {
@@ -154,15 +176,6 @@ function displayRunningScore() {
         }
     }
 
-    function getPlayerSelection() {
-        if(rock.clicked) {
-            return 'rock'
-        } else if (scissors.clicked) {
-            return 'scissors'
-        } else {
-            return 'paper'
-        }
-    }
 
 </script>
 </html>
